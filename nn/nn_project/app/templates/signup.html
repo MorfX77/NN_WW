@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}main{% endblock %}
+{% block style %}
+<!--<link rel="stylesheet" href="{% static 'main.css' %}">-->
+{% endblock %}
+
+
+
+{% block content %}
+        <div class="wrapper">
+            <form method="post">
+                {% csrf_token %}
+                <input type="text" name="firstname" placeholder="Имя" required>
+                <input type="text" name="lastname" placeholder="Фамилия" required>
+                <input type="text" name="middlename" placeholder="Отчество">
+                <input type="email" name="email" placeholder="email" required>
+                <input type="tel" name="phone" placeholder="Номер телефона" required>
+                <input type="text" name="username" placeholder="Логин" required>
+                <input type="password" name="password" placeholder="Пароль" required>
+                <button type="submit" name="users_post">Зарегистрироваться</button>
+            </form>
+        </div>
+{% endblock %}

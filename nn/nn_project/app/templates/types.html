@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Виды правонарушений{% endblock %}
+
+{% block content %}
+{{ types }}
+{% for type in types %}
+<div>
+    <a href="{% url 'new_app' type.id_type_offense %}">{{ type.title }}</a>
+</div>
+{% endfor %}
+
+{% endblock %}
